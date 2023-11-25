@@ -1,7 +1,7 @@
 const express = require("express");
 const cookieParser = require('cookie-parser');
 const pool = require('./config/db.js');
-
+const pollRouter = require('./routes/Poll.route.js');
 const cors = require("cors");
 
 require("dotenv").config();
@@ -21,6 +21,7 @@ app.use(express.urlencoded({ extended: true }));
     console.error('Database connection error:', error);
   }
 })();
+app.use('/api/v1',pollRouter);
 
 app.get("/", (req, res) => {
   res.send("Server is Running! 🚀");
