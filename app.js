@@ -1,6 +1,7 @@
 const express = require("express");
 const cookieParser = require('cookie-parser');
 const pool = require('./config/db.js');
+const userRouter = require('./routes/User.route.js')
 const pollRouter = require('./routes/Poll.route.js');
 const cors = require("cors");
 
@@ -22,7 +23,7 @@ app.use(express.urlencoded({ extended: true }));
   }
 })();
 app.use('/api/v1',pollRouter);
-
+app.use('/api/v1',userRouter)
 app.get("/", (req, res) => {
   res.send("Server is Running! 🚀");
 });

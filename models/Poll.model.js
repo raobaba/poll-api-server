@@ -49,7 +49,7 @@ const getAllPolls = async () => {
     const pollsWithInfo = await Promise.all(
       rows.map(async (poll) => {
         const [voteCountRow] = await pool.query(
-          'SELECT COUNT(*) AS total_votes FROM Polls WHERE poll_id = ?',
+          'SELECT COUNT(*) AS total_votes FROM UserPolls WHERE poll_id = ?',
           [poll.poll_id]
         );
 
@@ -173,11 +173,10 @@ const updateQuestionSet = async (pollId, questionId, updateData) => {
   }
 };
 
-
 module.exports = {
   createPoll,
   addQuestionSet,
   getAllPolls,
   updatePollDetails,
-  updateQuestionSet
+  updateQuestionSet,
 };

@@ -74,6 +74,7 @@ const getAllPollsController = async (req, res) => {
   }
 };
 
+// Update Poll Details Controller
 const updatePollDetailsController = async (req, res) => {
   const { pollId } = req.params;
   const updateData = req.body;
@@ -89,6 +90,7 @@ const updatePollDetailsController = async (req, res) => {
   }
 };
 
+// Update Question Set Controller
 const updateQuestionSetController = async (req, res) => {
   const { pollId, questionId } = req.params;
   const updateData = req.body;
