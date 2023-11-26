@@ -23,7 +23,7 @@ const createPoll = async (
 const addQuestionSet = async (pollId, questionType, questionText, options) => {
   try {
     const [result] = await pool.query(
-      "INSERT INTO QuestionSets (poll_id, question_type, question_text) VALUES (?, ?, ?)",
+      "INSERT INTO Questions (poll_id, question_type, question_text) VALUES (?, ?, ?)",
       [pollId, questionType, questionText]
     );
     const questionId = result.insertId;
@@ -54,7 +54,7 @@ const getAllPolls = async () => {
         );
 
         const [questionSetsCountRow] = await pool.query(
-          'SELECT COUNT(*) AS num_question_sets FROM QuestionSets WHERE poll_id = ?',
+          'SELECT COUNT(*) AS num_question_sets FROM Questions WHERE poll_id = ?',
           [poll.poll_id]
         );
 
@@ -135,7 +135,7 @@ const updateQuestionSet = async (pollId, questionId, updateData) => {
 
   try {
     const updateValues = [];
-    let updateQuery = 'UPDATE QuestionSets SET';
+    let updateQuery = 'UPDATE Questions SET';
 
     if (questionText) {
       updateQuery += ' question_text = ?,';

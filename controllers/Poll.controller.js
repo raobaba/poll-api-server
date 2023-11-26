@@ -82,11 +82,11 @@ const updatePollDetailsController = async (req, res) => {
   try {
     const updated = await updatePollDetails(pollId, updateData);
     if (!updated) {
-      return res.status(404).json({ error: 'Poll not found or no changes applied' });
+      return res.status(404).json({ error: 'No changes applied or poll not found' });
     }
     res.status(200).json({ message: 'Poll details updated successfully' });
   } catch (error) {
-    res.status(500).json({ error: 'Could not update poll details' });
+    handleServerError(res, error, 'Could not update poll details');
   }
 };
 
