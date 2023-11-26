@@ -67,7 +67,8 @@ The database schema includes tables for Users, Polls, Questions, Options, UserPo
 
 ## Postman Collection
 
-[Access the Postman collection here]([link-to-your-postman-collection](https://universal-star-350473.postman.co/workspace/New-Team-Workspace~d50e83ff-5303-424f-a991-8e73d7c728fc/collection/30678801-a80ef647-1f2e-46b5-86c9-52a39c4c8773?action=share&creator=30678801)).
+[Access the Postman collection here](https://universal-star-350473.postman.co/workspace/New-Team-Workspace~d50e83ff-5303-424f-a991-8e73d7c728fc/collection/30678801-a80ef647-1f2e-46b5-86c9-52a39c4c8773?action=share&creator=30678801)
+
 
 Feel free to enhance and expand this documentation by adding more detailed descriptions, examples, or any additional information that might be relevant for users or developers interacting with your API.
 
